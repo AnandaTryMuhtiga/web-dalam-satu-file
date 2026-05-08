@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Judul website yang tampil di tab browser -->
+  <title>Website Sederhana</title>
+
+  <style> /* fungsi css internal */
+    body {
+      font-family: Arial, sans-serif; /* Jenis font */
+      margin: 0; /* Menghapus jarak default */
+      background: #f4f4f4; /* Warna background */
+    }
+
+    /* style untuk class header */
+    header {
+      background: #333; 
+      color: white; 
+      padding: 15px; 
+      text-align: center; 
+    }
+
+    /*style untuk class nav */
+    nav {
+      background: #555;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* style untuk class nav a */
+    nav a {
+      color: white;
+      margin: 0 10px; 
+      text-decoration: none; /* menghilangkan garis bawah */
+    }
+
+    /* Efek saat mouse diarahkan ke menu */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Area utama isi website */
+    main {
+      padding: 20px;
+    }
+
+    /* style untuk class section */
+    section {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px; /* Membuat sudut membulat */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan */
+    }
+
+    /* style untuk class footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+
+      /* Membuat footer selalu di bawah layar */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* style untuk class button */
+    button {
+      padding: 10px 15px;
+      background: #5f5f5f; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; 
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header website -->
+<header>
+  <h1>Website Satu File</h1>
+  <p>HTML + CSS + JavaScript dalam satu file</p>
+</header>
+
+<!-- Menu navigasi -->
+<nav>
+  <!-- href="#id" digunakan untuk pindah ke section tertentu -->
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Konten utama -->
+<main>
+
+  <!-- Section Home -->
+  <section id="home"> <!-- Section adalah fungsi penglompokkan -->
+    <h2>Home</h2>
+    <p>Ini adalah halaman utama website sederhana.</p>
+
+    <!-- Tombol untuk menjalankan function tampilkanPesan() -->
+    <button onclick="tampilkanPesan()">Klik Saya</button>
+  </section>
+
+  <!-- Section About -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Website ini dibuat dalam satu file menggunakan HTML, CSS,
+      dan JavaScript.
+    </p>
+  </section>
+
+  <!-- Section Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <!-- Form kontak -->
+    <form onsubmit="kirimForm(event)">
+
+      <!-- Input nama -->
+      <label>Nama:</label><br>
+
+      <!-- required = wajib diisi -->
+      <input type="text" id="nama" required><br><br>
+
+      <!-- Input email -->
+      <label>Email:</label><br>
+
+      <!-- type="email" otomatis validasi format email -->
+      <input type="email" required><br><br>
+
+      <!-- Tombol submit form -->
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Website Sederhana</p>
+</footer>
+
+<script>
+
+  // Function untuk menampilkan popup alert
+  function tampilkanPesan() {
+
+    // alert() menampilkan pesan popup
+    alert("Halo! Ini JavaScript dalam satu file.");
+  }
+
+  // Function saat form dikirim
+  function kirimForm(event) {
+
+    // Mencegah form reload halaman
+    event.preventDefault();
+
+    // Mengambil value/nilai dari input dengan id="nama"
+    const nama = document.getElementById("nama").value;
+
+    // Menampilkan pesan popup
+    alert("Terima kasih, " + nama + "! Pesan Anda terkirim.");
+  }
+
+</script>
+
+</body>
+</html>
